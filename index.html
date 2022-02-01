@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    
+    <!-- <link rel="manifest" href="./manifest.json">  -->
+    <title>Sticky Notes</title>
+</head>
+
+<body>
+
+    <div id="heading">
+        <h1> sticky Notes</h1>
+    </div>
+
+    <div id="form">
+        <form id="inputForm">
+              <input 
+                    type="text" 
+                    name="title" 
+                    placeholder="Title" 
+                    id="titleInput" 
+                    class="inputText" 
+                    autocomplete="off"
+                    required
+                    autofocus
+               />
+
+               <textarea
+                    type="text" 
+                    name="content" 
+                    placeholder="Content" 
+                    id="contentInput" 
+                    class="inputText" 
+                    autocomplete="off"
+                    required
+                > </textarea>
+
+              <button type="submit" class="btn" id="submitBtn"> Create Notes </button>
+        </form>
+    </div>
+
+    <h3 id="no-notes"> No notes found , add one! </h3>
+    <ul id="notes">   
+    </ul>
+
+    <div class="modal fade" id="myModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modaltext" id="exampleModalLongTitle">
+                Edit blog
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="mr-auto ml-auto" id="blog-edit-form">
+                <div class="form-group">
+                  <label for="title" class="modaltext">Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    name="title"
+                  />
+                  <p class="error-msg-title"></p>
+                </div>
+                <div class="form-group">
+                  <label for="description" class="modaltext">Description</label>
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    rows="5"
+                  ></textarea>
+                  <p class="error-msg-description"></p>
+                </div>
+                <p class="text-center form-status invalid"></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button onclick="update()"  type="button" class="btn btn-primary" id="save-edit-btn">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+         
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"></script>
+ 
+
+    <script src="./myscripts.js"></script>
+</body>
+
+</html>
